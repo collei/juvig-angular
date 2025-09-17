@@ -3,5 +3,56 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "juvig": {
+      "projectType": "library",
+      "root": "projects/juvig",
+      "sourceRoot": "projects/juvig/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/juvig/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/juvig/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/juvig/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production",
+          "scripts": [
+            "node_modules/jquery/dist/jquery.min.js"
+          ]
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/juvig/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/juvig/**/*.ts",
+              "projects/juvig/**/*.html"
+            ],
+            "eslintConfig": "projects/juvig/eslint.config.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

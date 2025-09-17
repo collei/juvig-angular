@@ -1,0 +1,9 @@
+div.juvig-image-paster > img { max-width: 100% !important; }
+div.juvig-image-paster > textarea { display: none; }
+div.juvig-image-paster[data-state="empty"] > textarea { display: block; }
+div.juvig-image-paster[data-state="empty"] > img { display: none; }
+div.juvig-image-paster[data-state="empty"] > button { display: none; }
+div.juvig-image-paster[data-state="full"] > textarea { display: none !important; }
+div.juvig-image-paster[data-state="full"] > img { display: block; }
+div.juvig-image-paster[data-state="full"] > button { display: inline-block; }
+
