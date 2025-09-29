@@ -1,5 +1,5 @@
 <div id="{{ id }}" class="juvig-image-paster" data-state="empty">
 	<textarea name="{{ name }}" class="form-control" (paste)="handlePaste($event)">{{ value }}</textarea>
     <img src="{{ value }}">
-    <button class="btn btn-danger text-white" (click)="removeImage($event)">🗑</button>
+    <button class="btn btn-danger text-white {{ buttonPosition }}" (click)="removeImage($event)">🗑</button>
 </div>

@@ -18,6 +18,9 @@ export class JuvigImagePasterComponent {
 	@Input()
 	value : string = '';
 
+	@Input()
+	buttonPosition : string = 'top-right';
+
 	@Output()
 	valueChange : EventEmitter<string> = new EventEmitter<string>();
 
